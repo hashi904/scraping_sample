@@ -1,24 +1,15 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## why
+- provide web scraping data as csv, json.
+- this app can show us scraping in admin page. and you can set the scraping motion(date, )
+## todo list
+- [x] scraping_service
+- [ ] db setting
+- [ ] model  => feeds model saving html elements
+- [ ] scraping_service model insert data
+- [ ] admin controller 
+- [ ] user authentication
+- [ ] csv
+- [ ] api
+  - user authentication
+  - provide_controller => provide feed data
