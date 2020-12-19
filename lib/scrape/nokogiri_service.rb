@@ -1,16 +1,13 @@
 require 'open-uri'
 
 module Scrape
+  # testing command
   # scraping class
-  # scraper = Scrape::ScrapingService.new(url: 'https://qiita.com/search?q=ruby', node: '//h1[@class="searchResult_itemTitle"]', scrape_type: 'XPATH')
+  # scraper = Scrape::NokogiriService.new(url: 'https://qiita.com/search?q=ruby', node: '//h1[@class="searchResult_itemTitle"]', scrape_type: 'XPATH')
   # scraper.execute
-  def self.item
-    puts 'hello'
-  end
-  class Hoge
-  end
 
-  class ScrapingService
+  # scrape seervice class used by nokogiri
+  class NokogiriService
     # urlを引数として受け取ってscrapingした値を返す(配列の方がいい？
     def initialize(url:, node:, scrape_type:)
       @url = url
@@ -18,15 +15,14 @@ module Scrape
       @scrape_type ||= scrape_type
     end
 
-    # 多分ダックタイピングが使える
     def execute
       doc = Nokogiri::HTML(URI.open(@url))
-      case scraping_type
-      when CSS
+      case @scrape_type
+      when 'CSS'
         by_css(doc)
-      when XPATH
+      when 'XPATH'
         by_xpath(doc)
-      when OTHER
+      when 'OTHER'
         by_others(doc)
       else
         nil
