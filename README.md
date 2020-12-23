@@ -6,7 +6,7 @@
 - [x] scraping_service
 - [x] db setting
 - [x] model  => feeds model saving html elements
-- [x] admin model => saving settings for scraping (id, type, node, stauts, (user_id))
+- [x] admin model => saving settings for scraping (id, url, node, status, (user_id))
 - [ ] admin view
 - [ ] admin controller
   - [ ] get: index action
@@ -17,3 +17,6 @@
 - [ ] api
   - user authentication
   - provide_controller => provide feed data
+
+
+
