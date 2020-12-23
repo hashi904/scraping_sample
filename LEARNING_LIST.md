@@ -28,3 +28,15 @@ config.autoload_paths += ['lib']
 - commandの実行
   - createdb hoge_db user_name
 - settings.ymlを書き換え
+
+### DB周り
+```sh
+# add column
+$ rails generate migration AddColumnAdmins
+
+# change column name
+$ rails generate migration rename_[変更前のカラム名]_column_to_[モデル名(複数形)]
+
+# migrate
+$ rake db:migrate
+```
