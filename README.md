@@ -4,10 +4,14 @@
 - this app can show us scraping in admin page. and you can set the scraping motion(date, )
 ## todo list
 - [x] scraping_service
-- [ ] db setting
-- [ ] model  => feeds model saving html elements
-- [ ] scraping_service model insert data
-- [ ] admin controller 
+- [x] db setting
+- [x] model  => feeds model saving html elements
+- [x] admin model => saving settings for scraping (id, type, node, stauts, (user_id))
+- [ ] admin view
+- [ ] admin controller
+  - [ ] get: index action
+  - [ ] post: create action => scraping start, validation
+  - [ ] post: save => save settings for scraping, validation
 - [ ] user authentication
 - [ ] csv
 - [ ] api
