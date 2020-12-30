@@ -32,6 +32,7 @@ config.autoload_paths += ['lib']
 ### DB周り
 ```sh
 # add column
+$ rails generate migration クラス名 カラム名:データ型( カラム名:データ型)
 $ rails generate migration AddColumnAdmins
 
 # change column name
