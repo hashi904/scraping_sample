@@ -8,8 +8,8 @@
 - [x] model  => feeds model saving html elements
 - [x] admin model => saving settings for scraping (id, url, node, status, (user_id))
 - [x] admin view index : you can confirm scraping status
-- [ ] admin view new : you can submit scraping settings, status
-- [ ] admin view show; you can view scraping settings, status details
+- [x] admin view new : you can submit scraping settings, status
+- [x] admin view show; you can view scraping settings, status details
 - [ ] admin controller : new/index/create/show/edit
   - [ ] get: index action
   - [ ] get: new action
@@ -21,4 +21,3 @@
   - user authentication
   - provide_controller => provide feed data
 - [ ] refactoring matapro form object
-
