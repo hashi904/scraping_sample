@@ -1,5 +1,4 @@
 class Feed < ApplicationRecord
-  belongs_to :admin
 
   def save_node(url, node, scrape_type)
     text ||= scraping_execute(url, node, scrape_type)
