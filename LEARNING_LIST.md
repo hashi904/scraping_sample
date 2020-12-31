@@ -1,4 +1,6 @@
 # learnign in this application list
+## 設計周り
+- 設計が曖昧なままコーディングに入るとプロダクトの完成度が近づくに連れて齟齬が発生する
 ## Ruby
 - class console meanig
 ```ruby
