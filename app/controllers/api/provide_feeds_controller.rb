@@ -8,15 +8,24 @@ module Api
 
     def create
       # status: 0: false, 1: success
-      @feed = Feed.new(feed_params_completed)
+      feed = Feed.new(feed_params_with_status_completed)
 
-      if text.present? && @feed.save
-        render json: { status: 'success', parameters: feed_params_completed }
+      if text.present? && feed.save
+        render json: { status: 'success', parameters: feed_params_with_status_completed }
       else
         render json: { status: 'failed' }
       end
     rescue OpenURI::HTTPError
       render json: { http: 'not found error' }
+    end
+
+    def show
+      render json: { feeds: Feed.find(params[:id]) }
+    end
+
+    def destroy
+      feed = Feed.find(params[:id])
+      feed.destroy
     end
 
     private
@@ -25,7 +34,7 @@ module Api
       params.require(:feed).permit(:url, :node, :node_type)
     end
 
-    def feed_params_completed
+    def feed_params_with_status_completed
       feed_params.merge({ text: text, status: 1 })
     end
 

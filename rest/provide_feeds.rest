@@ -1,8 +1,10 @@
 ### provide_fees#index
 GET  http://localhost:3000/api/provide_feeds
 
-### provide_fees#create
+### provide_fees#show
+GET  http://localhost:3000/api/provide_feeds/3
 
+### provide_fees#create
 POST http://localhost:3000/api/provide_feeds
 content-type: application/json
 
@@ -13,3 +15,6 @@ content-type: application/json
     "node": "//h1[@class='searchResult_itemTitle']"
   }
 }
+
+### provide_feeds#destroy
+DELETE  http://localhost:3000/api/provide_feeds/3
