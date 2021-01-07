@@ -7,7 +7,7 @@ class AdminsController < ApplicationController
   end
 
   def create
-    text = @feed.save_node(url: feed_params[:url], node: feed_params[:node], scrape_type: feed_params[:scrape_type])
+    text = @feed.save_node(url: feed_params[:url], node: feed_params[:node], node_type: feed_params[:node_type])
     # todo adminsにも入力情報を保存する
     @feed.create(text: text) if text.present?
 
@@ -21,6 +21,6 @@ class AdminsController < ApplicationController
   private
 
   def feed_params
-    params.require(:admin).permit(:url, :node, :scrape_type)
+    params.require(:admin).permit(:url, :node, :node_type)
   end
 end

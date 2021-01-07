@@ -1,0 +1,15 @@
+### provide_fees#index
+GET  http://localhost:3000/api/provide_feeds
+
+### provide_fees#create
+
+POST http://localhost:3000/api/provide_feeds
+content-type: application/json
+
+{
+  "feed": {
+    "url": "http://qiita.com/search?q=python",
+    "node_type": "XPATH",
+    "node": "//h1[@class='searchResult_itemTitle']"
+  }
+}
