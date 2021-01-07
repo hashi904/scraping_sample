@@ -20,4 +20,9 @@
 - [ ] api
   - user authentication
   - provide_controller => provide feed data
+    - [x] index
+    - [x] create
+    - [x] delete
+    - [x] show
 - [ ] refactoring matapro form object
+- [ ] nokogiri misconversion so i must modify text code
