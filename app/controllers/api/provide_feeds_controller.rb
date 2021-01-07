@@ -3,7 +3,7 @@ module Api
   # privide feeds class
   class ProvideFeedsController < ApplicationController
     def index
-      render json: { action: 'index' }
+      render json: { feeds: Feed.all }
     end
 
     def create
