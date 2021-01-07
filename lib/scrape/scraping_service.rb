@@ -2,13 +2,13 @@ require 'open-uri'
 
 module Scrape
   # scraping class
-  # scraper = Scrape::ScrapingService.new(url: 'https://qiita.com/search?q=ruby', node: '//h1[@class="searchResult_itemTitle"]', scrape_type: 'XPATH')
+  # scraper = Scrape::ScrapingService.new(url: 'https://qiita.com/search?q=ruby', node: '//h1[@class="searchResult_itemTitle"]', node_type: 'XPATH')
   # scraper.execute
   class ScrapingService
-    def initialize(url:, node:, scrape_type:)
+    def initialize(url:, node:, node_type:)
       @url = url
       @node = node
-      @scrape_type ||= scrape_type
+      @node_type ||= node_type
     end
 
     # todo リファクタリング

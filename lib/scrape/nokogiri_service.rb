@@ -2,20 +2,22 @@ require 'open-uri'
 
 module Scrape
   # testing command
-  # scraper = Scrape::NokogiriService.new(url: 'https://qiita.com/search?q=ruby', node: '//h1[@class="searchResult_itemTitle"]', scrape_type: 'XPATH')
+  # scraper = Scrape::NokogiriService.new(url: 'https://qiita.com/search?q=ruby', node: '//h1[@class="searchResult_itemTitle"]', node_type: 'XPATH')
   # scraper.execute
 
   # scrape service class used by nokogiri
   class NokogiriService
-    def initialize(url:, node:, scrape_type:)
+    def initialize(url:, node_type:, node:)
       @url = url
+      @node_type ||= node_type
       @node = node
-      @scrape_type ||= scrape_type
     end
 
     def execute
+      # todo try 404　対応
+      # http errorをキャッチする場所
       doc = Nokogiri::HTML(URI.open(@url))
-      case @scrape_type
+      case @node_type
       when 'CSS'
         by_css(doc)
       when 'XPATH'
