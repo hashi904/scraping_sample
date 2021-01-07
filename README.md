@@ -16,9 +16,14 @@
   - [ ] post: create action => scraping start, validation
   - [ ] post: save => save settings for scraping, validation
 - [ ] user authentication
+  - [ ] sigin up
+
 - [ ] csv
 - [ ] api
   - user authentication
+    - [ ] sigin in
+      - token authentication
+
   - provide_controller => provide feed data
     - [x] index
     - [x] create
