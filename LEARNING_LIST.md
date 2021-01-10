@@ -31,6 +31,8 @@ config.autoload_paths += ['lib']
   - createdb hoge_db user_name
 - settings.ymlを書き換え
 
+- sessionメソッドはmodelでは直接呼び出せない、、、らしい
+
 ### DB周り
 ```sh
 # add column
@@ -43,3 +45,6 @@ $ rails generate migration rename_[変更前のカラム名]_column_to_[モデ�
 # migrate
 $ rake db:migrate
 ```
+
+## 疑問
+- Rails Consoleでsessionメソッドを使うには何をrequire/includeすればいいのだろうか？
