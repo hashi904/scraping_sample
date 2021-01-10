@@ -33,6 +33,13 @@ config.autoload_paths += ['lib']
 
 - sessionメソッドはmodelでは直接呼び出せない、、、らしい
 
+## model validation
+- 正規表現でvalidation
+```ruby
+validation reqular expression
+validates :name, format: { with: REGEXP }
+```
+
 ### DB周り
 ```sh
 # add column
