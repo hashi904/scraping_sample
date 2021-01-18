@@ -18,3 +18,12 @@ content-type: application/json
 
 ### provide_feeds#destroy
 DELETE  http://localhost:3000/api/provide_feeds/3
+
+### user authentication
+POST http://localhost:3000/api/sign_in/
+content-type: application/json
+
+{
+  "email": "hoge@gmail.com",
+  "password": "hogehoge"
+}

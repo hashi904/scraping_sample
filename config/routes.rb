@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :admins
+
+  # api
   namespace :api do
     resources :provide_feeds, only: %i[index create show destroy]
+    # user authentication
+    post '/sign_in', to: 'sessions#create'
   end
 end
