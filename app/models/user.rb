@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_secure_token
 
   # validations
   validates_presence_of :name, :email, :password
