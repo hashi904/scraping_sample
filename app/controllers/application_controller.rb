@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  def render_401(error=nil)
+  def render_401(error = nil)
     logger.info "Rendering 401 with exception: #{error.message}" if error
 
     if request.xhr?
