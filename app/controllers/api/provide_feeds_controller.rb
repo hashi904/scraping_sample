@@ -2,6 +2,9 @@
 module Api
   # privide feeds class
   class ProvideFeedsController < ApplicationController
+    include JwtAuthenticator
+    before_action :jwt_authenticate
+
     def index
       render json: { feeds: Feed.all }
     end

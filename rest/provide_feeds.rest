@@ -1,11 +1,14 @@
 ### provide_fees#index
 GET  http://localhost:3000/api/provide_feeds
+X-Requested-With: XMLHttpRequest
 
 ### provide_fees#show
 GET  http://localhost:3000/api/provide_feeds/3
+X-Requested-With: XMLHttpRequest
 
 ### provide_fees#create
 POST http://localhost:3000/api/provide_feeds
+X-Requested-With: XMLHttpRequest
 content-type: application/json
 
 {
@@ -18,12 +21,19 @@ content-type: application/json
 
 ### provide_feeds#destroy
 DELETE  http://localhost:3000/api/provide_feeds/3
+X-Requested-With: XMLHttpRequest
 
 ### user authentication
 POST http://localhost:3000/api/sign_in/
+X-Requested-With: XMLHttpRequest
 content-type: application/json
 
 {
   "email": "hoge@gmail.com",
   "password": "hogehoge"
 }
+
+### provide_fees#index with token
+GET  http://localhost:3000/api/provide_feeds
+X-Requested-With: XMLHttpRequest
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6ImhvZ2UiLCJleHAiOjE2MTEzNzgwNzl9.Rmuf44-Owb6YFI3GBvZIFxybk

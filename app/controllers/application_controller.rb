@@ -3,20 +3,20 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  def render_401(error = nil)
-    logger.info "Rendering 401 with exception: #{error.message}" if error
+  def render_401(error_message = nil)
+    logger.info "Rendering 401 with exception: #{error_message}" if error_message
 
     if request.xhr?
-      render json: { error: '404 error' }, status: :unauthorized
+      render json: { error: '401 error', message: error_message }, status: :unauthorized
     else
       format = params[:format] == :json ? :json : :html
-      render template: 'errors/error_404', formats: format,
+      render template: 'errors/error_401', formats: format,
              status: :unauthorized, layout: 'application', content_type: 'text/html'
     end
   end
 
-  def render_404(error = nil)
-    logger.info "Rendering 404 with exception: #{error.message}" if error
+  def render_404(error_message = nil)
+    logger.info "Rendering 404 with exception: #{error_message}" if error_message
 
     if request.xhr?
       render json: { error: '404 error' }, status: :not_found
@@ -27,8 +27,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def render_500(error = nil)
-    logger.info "Rendering 500 with exception: #{error.message}" if error
+  def render_500(error_message = nil)
+    logger.info "Rendering 500 with exception: #{error_message}" if error_message
 
     if request.xhr?
       render json: { error: '500 error' }, status: :internal_server_error
@@ -40,10 +40,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   # ログインしていないユーザーはredirectする
   # controllerでbefore_actionで設定すること
   # ex) before_action :logged_in_user, only:[:edit, :update, :destroy]
-  def logged_in_uder
+  def logged_in_user
     redirect_to login_url unless logged_in?
   end
 end
