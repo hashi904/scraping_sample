@@ -32,7 +32,7 @@ module JwtAuthenticator
   end
 
   def unauthoraization_error
-    render_401('token is expired or wrong')
+    render_401('Either you should be sign in or token is expired or wrong')
   end
 
   def decoded_token
