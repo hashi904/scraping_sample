@@ -6,7 +6,7 @@ module Api
     before_action :jwt_authenticate
 
     def index
-      render json: { feeds: Feed.all }
+      render json: { feeds: Feed.find_by(user_id: session[:jwt_user_id]) }
     end
 
     def create
@@ -23,7 +23,7 @@ module Api
     end
 
     def show
-      render json: { feeds: Feed.find(params[:id]) }
+      render json: { feeds: Feed.show(id, session[:jwt_user_id]) }
     end
 
     def destroy
@@ -38,7 +38,7 @@ module Api
     end
 
     def feed_params_with_status_completed
-      feed_params.merge({ text: text, status: 1 })
+      feed_params.merge({ text: text, status: 1, user_id: session[:jwt_user_id] })
     end
 
     def text

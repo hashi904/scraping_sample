@@ -12,7 +12,9 @@ module JwtAuthenticator
     return unauthoraization_error if decoded_token.nil?
 
     current_user = User.find_by(id: decoded_token[:id])
-    current_user
+    return unauthoraization_error if current_user.nil?
+
+    session[:jwt_user_id] = current_user.id
   end
 
   def encode(id:, name:)
