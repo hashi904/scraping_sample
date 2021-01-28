@@ -55,3 +55,5 @@ $ rake db:migrate
 
 ## 疑問
 - Rails Consoleでsessionメソッドを使うには何をrequire/includeすればいいのだろうか？
+- Railsのapiのエラーハンドリングはどうしたらいい？ raiseだと500が返ってきてclient側だと何が起こったのか一切わからない
+  - returnでちゃんと返してないだけだった

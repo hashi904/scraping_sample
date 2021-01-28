@@ -4,14 +4,16 @@ module Api
   # user authentication json params
   # {"email": "your_email", "password": "your_password"}
   class SessionsController < ApplicationController
+    skip_before_action :verify_authenticity_token
     include JwtAuthenticator
+
     def create
       user = User.find_by(email: login_params[:email])
       if user.present? && user.authenticate(login_params[:password])
         log_in(user)
         render json: { status: 'login success', token: token(user) }
       else
-        render json: { status: 'login failed' }
+        render_401('login failed')
       end
     end
 

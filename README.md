@@ -16,12 +16,21 @@
   - [ ] post: create action => scraping start, validation
   - [ ] post: save => save settings for scraping, validation
 - [ ] user authentication
-  - [ ] sigin up
+  - [ ] sigin up with session
 
 - [ ] csv
-- [ ] api
+  - [x] brew install redis
+  - [x] gem install
+    - start as deamon process `brew services start redis`
+    - start sidekiq `bundle exec sidekiq -C config/sidekiq.yml`
+  - implements csv as sidekiq
+    - [] api
+    - [] view
+- [x] api
+- [x] application controller
+  - error code
   - user authentication
-    - [ ] sigin in
+    - [x] sigin in
       - token authentication
 
   - provide_controller => provide feed data
