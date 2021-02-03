@@ -23,9 +23,15 @@
   - [x] gem install
     - start as deamon process `brew services start redis`
     - start sidekiq `bundle exec sidekiq -C config/sidekiq.yml`
+  - [ ] create worker
   - implements csv as sidekiq
-    - [] api
-    - [] view
+    - [ ] api
+      - [ ] create ExportFeeds
+        - [ ] index
+    - [ ] view
+      - [ ] create ExportFeeds
+        - [ ] index
+
 - [x] api
 - [x] application controller
   - error code
