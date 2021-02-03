@@ -47,11 +47,25 @@ $ rails generate migration クラス名 カラム名:データ型( カラム名:
 $ rails generate migration AddColumnAdmins
 
 # change column name
-$ rails generate migration rename_[変更前のカラム名]_column_to_[モデル名(複数形)]
+更前のカラム名]_column_to_[モデル名(複数形)]
 
 # migrate
 $ rake db:migrate
 ```
+
+## worker
+- 起動
+  - redis
+    - rew services start redis
+  - worker
+    - bundle exec sidekiq -C config/sidekiq.yml
+  - パブリックメソッド
+    - performと定義する
+  - 呼び出すとき
+    - perform_async
+  - 参考
+    - https://shiro-16.hatenablog.com/entry/2015/10/12/192412
+
 
 ## 疑問
 - Rails Consoleでsessionメソッドを使うには何をrequire/includeすればいいのだろうか？
